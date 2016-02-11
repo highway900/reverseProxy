@@ -30,6 +30,11 @@ func main() {
 	}
 	dirname := flag.Args()[0]
 
+	if _, err := os.Stat(dirname); os.IsNotExist(err) {
+		log.Println(err)
+		os.Exit(0)
+	}
+
 	fs := http.FileServer(http.Dir(dirname))
 
 	log.Println("Serving", dirname)
