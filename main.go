@@ -42,8 +42,6 @@ func main() {
 	proxy1 := makeProxyHandler("http://localhost:6543")
 
 	r.HandleFunc("/api/{_dummy:.*}/", handler(proxy1))
-	// File handling will not have a trailing slash
-	r.HandleFunc("/static/{_dummy:.*}", handler(proxy1))
 
 	// To use my router the behavior is different to `http.Handle`
 	// matching will only occur on a fixed path or using an expression to
