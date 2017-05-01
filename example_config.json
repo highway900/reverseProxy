@@ -1,0 +1,7 @@
+{
+  "proxyIp": "localhost",
+  "proxyPort": 8001,
+  "proxyUrl": "/api/",
+  "serverPort": 8009,
+  "staticDirectory": "../reverseProxy"
+}

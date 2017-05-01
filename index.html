@@ -1,0 +1,17 @@
+<html>
+<body>
+<b>Hello World</b>
+<div id="time"></div>
+</body>
+<script>
+let checkTime = () => {
+	fetch('api/time/').then((response) => {
+		return response.text();
+	}).then((text) => {
+		let el = document.querySelector("#time");
+	 	el.textContent = text;
+	})
+}
+window.setInterval(checkTime, 500);
+</script>
+</html>
